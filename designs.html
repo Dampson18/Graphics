@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Works | My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root {
+    --primary-color: #007bff;
+    --bg-dark: #0a192f;
+    --card-bg: #112240;
+    --text-light: #ccd6f6;
+    --text-dim: #8892b0;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(10, 25, 47, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo span { color: var(--primary-color); }
+
+.back-btn {
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Gallery Grid */
+.gallery-container {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.image-box {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+/* Overlay & Buttons */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.image-box:hover .overlay { opacity: 1; }
+.image-box:hover .gallery-img { scale: 1.1; }
+
+.view-btn, .dl-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.view-btn { background: var(--primary-color); color: white; }
+.dl-btn { background: #2ecc71; color: white; }
+
+.item-info { padding: 20px; text-align: left; }
+.item-info h3 { margin: 0; font-size: 1.2rem; }
+.item-info span { color: var(--text-dim); font-size: 0.9rem; }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 50px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 50px;
+}
+
+.socials a {
+    color: var(--text-dim);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.socials a:hover { color: var(--primary-color); }</style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Graphic<span>Works</span></div>
+            <a href="https://dampson18.github.io/My-Portfolio/" class="back-btn">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <h1>My Creative Designs</h1>
+        <p>A collection of my recent graphic design projects.</p>
+
+        <div class="gallery-grid">
+
+<!-- Gallery items -->
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="adjumos-flyer1.jpg" alt="Adjumos Flyer" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="adjumos-flyer1.jpg" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>Adjumos</h3>
+        <span>Flyer</span>
+    </div>
+</div>
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="adjumos-logo1.png" alt="Adjumos Logo" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="adjumos-logo1.png" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>Adjumos</h3>
+        <span>Logo</span>
+    </div>
+</div>
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="mavictory-flyer.png" alt="MA Victory Market Flyer" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="mavictory-flyer.png" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>MA Victory Market</h3>
+        <span>Flyer</span>
+    </div>
+</div>
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="mavictorylogo.png" alt="MA Victory Market Logo" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="mavictorylogo.png" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>MA Victory Market</h3>
+        <span>Logo</span>
+    </div>
+</div>
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="mimi-banner.png" alt="Mimi Beauty Banner" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="mimi-banner.png" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>Mimi Beauty</h3>
+        <span>Banner</span>
+    </div>
+</div>
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="mimi-logo.png" alt="Mimi Beauty Logo" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="mimi-logo.png" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>Mimi Beauty</h3>
+        <span>Logo</span>
+    </div>
+</div>
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="nextedge-flyer.jpg" alt="NextEdge Flyer" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="nextedge-flyer.jpg" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>NextEdge</h3>
+        <span>Flyer</span>
+    </div>
+</div>
+
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="nextedge-logo.webp" alt="NextEdge Logo" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="nextedge-flyer.jpg" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>NextEdge</h3>
+        <span>Logo</span>
+    </div>
+</div>
+
+
+<div class="gallery-item">
+    <div class="image-box">
+        <img src="trudy-flyer.jpg" alt="Trudy Flyer" class="gallery-img">
+        <div class="overlay">
+            <button class="view-btn"><i class="fas fa-expand"></i> View</button>
+            <a href="nextedge-flyer.jpg" download class="dl-btn">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+    <div class="item-info">
+        <h3>Trudy</h3>
+        <span>Flyer</span>
+    </div>
+</div>
+
+<!-- add more -->
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kelvin Dampson. Built with passion.</p>
+        <div class="socials">
+            <a href="https://github.com/dampson18"><i class="fab fa-github"></i></a>
+            <a href="https://gh.linkedin.com/in/kelvin-dampson-060424213"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImg">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("expandedImg");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.querySelector(".close-modal");
+
+    // Get all view buttons
+    const viewButtons = document.querySelectorAll('.view-btn');
+
+    viewButtons.forEach(btn => {
+        btn.onclick = function() {
+            modal.style.display = "block";
+            // Get the image source from the parent container
+            const imgSrc = this.closest('.image-box').querySelector('img').src;
+            const title = this.closest('.gallery-item').querySelector('h3').innerText;
+            
+            modalImg.src = imgSrc;
+            captionText.innerHTML = title;
+        }
+    });
+
+    // Close modal when X is clicked
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+</script>
+</body>
+</html>
